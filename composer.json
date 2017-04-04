@@ -1,0 +1,17 @@
+{
+  "name": "jacquelotjeff/D3JS-Twitter-Mongo",
+  "license": "MIT",
+  "type": "project",
+  "description": "D3JS-Twitter-Mongo",
+  "require": {
+    "php": "^5.6|7.0",
+    "doctrine/mongodb": "~1.2",
+    "doctrine/mongodb-odm": "1.0",
+    "guzzlehttp/guzzle": "~5.3"
+  },
+  "config": {
+    "platform": {
+      "php": "5.6"
+    }
+  }
+}
