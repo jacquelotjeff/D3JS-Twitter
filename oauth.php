@@ -2,6 +2,7 @@
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Subscriber\Oauth\Oauth1;
+use MongoDB\BSON\UTCDateTime;
 
 $client = new Client([
     'base_url' => 'https://api.twitter.com',
@@ -24,7 +25,6 @@ $client = new Client([
 /*
  * Executing a GET request on the timeline service, pass the result to the json parser
  */
-
 $toSearch  = urlencode('Paris');
 $maxTweets = 100;
 
@@ -38,11 +38,16 @@ $response = $res->getBody()->getContents();
 $results = json_decode($response, true);
 
 foreach ($results['statuses'] as $result) {
+
+    $datetime = new DateTime($result['created_at']);
+    $timestamp = $datetime->getTimestamp();
+    $bsonDate = new UTCDateTime($timestamp * 1000);
+
     $tweet = [
         'id'            => $result['id'],
         'lang'          => $result['lang'],
         'hashtags'      => $result['entities']['hashtags'],
-        'created_at'    => $result['created_at'],
+        'created_at'    => $bsonDate,
         'text'          => $result['text'],
         'retweet_count' => $result['retweet_count']
     ];

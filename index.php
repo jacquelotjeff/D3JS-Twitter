@@ -7,7 +7,10 @@ $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 require "oauth.php";
 
 include('database/tweets-by-country.php');
+include('database/tweets-on-time.php');
+
 $tweetsByCountries = getTweetsByCountries($manager);
+$tweetsOnTime = getTweetsOnTime($manager);
 
 ?>
 
@@ -29,13 +32,13 @@ $tweetsByCountries = getTweetsByCountries($manager);
     <div style="margin-left: 100px;width:500px; height:500px">
         <canvas id="mostRetweeted" width="40" height="40"></canvas>
     </div>
-    <h2>Popularité de la baguette dans le temps</h2>
+    <h2>Popularité de Paris dans le temps</h2>
     <div style="width: 700px; height: 700px; position: absolute;">
-        <canvas id="baguettesOnTime"></canvas>
+        <canvas id="tweetsOnTime"></canvas>
     </div>
-
     <script>
-        var tweetsByCountry = <?php echo json_encode($tweetsByCountries) ?>
+        var tweetsByCountry = <?php echo json_encode($tweetsByCountries) ?>;
+        var tweetsOnTime = <?php echo json_encode($tweetsOnTime) ?>;
     </script>
     <script src="js/utils/colors.js"></script>
     <script
@@ -44,7 +47,7 @@ $tweetsByCountries = getTweetsByCountries($manager);
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script type="text/javascript" src="js/tagcloud.js"></script>
-    <script src="js/baguettes-on-time.js" charset="UTF-8"></script>
+    <script src="js/tweets-on-time.js" charset="UTF-8"></script>
     <script src="js/hastags-cloud.js" charset="UTF-8"></script>
     <script src="js/most-retweeted.js" charset="UTF-8"></script>
     <script src="js/tagcloud.js" charset="UTF-8"></script>

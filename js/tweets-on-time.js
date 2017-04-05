@@ -1,6 +1,15 @@
-var ctx = document.getElementById("baguettesOnTime");
+var ctx = document.getElementById("tweetsOnTime");
+
+labels = tweetsOnTime.map(function (item, index) {
+    return item._id.tweeted_at_month + "-" + item._id.tweeted_at_year;
+});
+
+counts = tweetsOnTime.map(function (item, index) {
+    return item.count;
+});
+
 var data = {
-    labels: ["Novembre 2016", "Décembre 2016", "Janvier 2017", "Février 2017", "Avril 2017"],
+    labels: labels,
     datasets: [
         {
             label: "Popularité de la baguette dans le temps",
@@ -21,7 +30,7 @@ var data = {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [45, 143, 70, 245, 34],
+            data: counts,
             spanGaps: false,
         }
     ]
