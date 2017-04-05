@@ -6,9 +6,10 @@ $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 
 require "oauth.php";
 
+include('database/hashtags.php');
 include('database/tweets-by-country.php');
 $tweetsByCountries = getTweetsByCountries($manager);
-
+$hashtags = getHashtags($manager);
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +36,8 @@ $tweetsByCountries = getTweetsByCountries($manager);
     </div>
 
     <script>
-        var tweetsByCountry = <?php echo json_encode($tweetsByCountries) ?>
+        var tweetsByCountry = <?php echo json_encode($tweetsByCountries); ?>;
+        var hashtags = <?php echo json_encode($hashtags); ?>;
     </script>
 
     <script

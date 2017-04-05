@@ -1,3 +1,5 @@
+
+
 //On a besoin de formatter la liste de tag comme suit :
 //var list =[['foo', 12], ['bar', 6]];
 
@@ -10,11 +12,12 @@
 var o = [{ "_id" : "blabla", "count" : 50 },{ "_id" : "blaefbla", "count" : 20 }];
 
 list = [];
-o.forEach(function(element){
-    list.push($.map(element, function(el) { return el; }));
+hashtags.forEach(function(element){
+    console.log(element._id);
+    if(element._id.text.includes("paris") == false || element._id.text.includes("Paris") == false){
+        list.push($.map(element, function(el) {
+            return [el.text, element.count];
+        }));
+    };
 });
-console.log(list);
-
-
-
 WordCloud(document.getElementById('tagCloud'), { list: list } );
