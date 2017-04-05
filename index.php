@@ -5,23 +5,6 @@ require 'config.php';
 
 $jsonTweets = file_get_contents('data.json');
 $tweets = json_decode($jsonTweets);
-
-echo "<pre>";
-var_dump($tweets);
-echo "</pre>";die;
-
-$langs = [];
-foreach($tweets->statuses as $tweet){
-    //var_dump($tweet->metadata->iso_language_code);
-    $langs[] = $tweet->metadata->iso_language_code;
-}
-//var_dump($langs);
-$datas = array_count_values($langs);
-unset($datas["fr"]);
-//var_dump($datas);
-var_dump(array_keys($datas));
-$dataLabelCountries = json_encode(array_keys($datas));
-var_dump(json_encode($dataLabelCountries));
 ?>
 
 
@@ -35,58 +18,28 @@ var_dump(json_encode($dataLabelCountries));
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script type="text/javascript" src="js/tagcloud.js"></script>
 </head>
 <body>
     <h1>Big data</h1>
 
+    <h2>Sujets entourant Paris</h2>
+    <div style="margin-left: 100px;width:500px; height:500px">
+        <canvas id="tagCloud" width="400" height="400"></canvas>
+    </div>
     <h2>Les pays parlant le plus de baguette</h2>
     <div style="margin-left: 100px;width:500px; height:500px">
-        <canvas id="myChart" width="40" height="40"></canvas>
+        <canvas id="byCountry" width="40" height="40"></canvas>
     </div>
-    <h2>Hashtags les plus utilisés dans les tweet parlant de baguette</h2>
-
+    <h2>Le plus retweeté</h2>
+    <div style="margin-left: 100px;width:500px; height:500px">
+        <canvas id="mostRetweeted" width="40" height="40"></canvas>
+    </div>
     <h2>Popularité de la baguette dans le temps</h2>
     <div style="width: 700px; height: 700px; position: absolute;">
         <canvas id="baguettesOnTime"></canvas>
     </div>
 
-    <script>
-
-        var data = {
-    labels: [
-        "Red",
-        "Blue",
-        "Yellow"
-    ],
-            datasets: [
-                {
-                    data: [300, 50, 100],
-                    backgroundColor: [
-                    "#FF6384",
-                    "#36A2EB",
-                    "#FFCE56"
-                ],
-                    hoverBackgroundColor: [
-                    "#FF6384",
-                    "#36A2EB",
-                    "#FFCE56"
-                ]
-                }]
-        };
-        // And for a doughnut chart
-        var ctx = document.getElementById("myChart").getContext("2d");;
-        ctx.canvas.width = 300;
-        ctx.canvas.height = 300;
-        var myDoughnutChart = new Chart(ctx, {
-    type: 'doughnut',
-            data: data,
-            options: {
-        animation:{
-            animateScale:true
-                }
-    }
-        });
-    </script>
     <script src="/html/web/baguettes-on-time.js" charset="UTF-8"></script>
 </body>
 </html>
