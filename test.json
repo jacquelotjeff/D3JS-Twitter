@@ -1,0 +1,74 @@
+[
+  {
+    "id_str" : "849602864683069440",
+    "lang" : "pt",
+    "text" : "RT @Nanocrom19: @Tilah pensais pas que la baguette Ã©tait aussi clichÃ©",
+    "hashtags" : [],
+    "created_at" : "2016-01-21",
+    "retweet_count" : 34
+  },
+  {
+    "id_str" : "849602529562435585",
+    "lang" : "en",
+    "text" : "@DANNYonPC @MrProWestie And a baguette melee weapon ofc",
+    "hashtags" : ["Lassalle"],
+    "created_at" : "2016-03-13",
+    "retweet_count" : 0
+  },
+  {
+    "id_str" : "849349522522296320",
+    "lang" : "de",
+    "text" : "Jean #Lassalle - bonjour Mr Lassalle une baguette ? - mes chers compatriotes je vais #LeGrandDebat",
+    "hashtags" : ["Lassalle", "LeGrandDebat"],
+    "created_at" : "2016-07-10",
+    "retweet_count" : 123
+  },
+  {
+    "id_str" : "849592058964828162",
+    "lang" : "fr",
+    "text" : "RT @hou_ryan76: Just witnessed Wilson walk into the caf with a king can of iced tea and a baguette.",
+    "hashtags" : ["baguette", "boulangerie"],
+    "created_at" : "2016-03-10",
+    "retweet_count" : 23
+  },
+  {
+    "id_str": "1234567890",
+    "lang" : "DE",
+    "text" : "Ach er keur tzung archekel!!! BAGUETTE",
+    "hashtags" : ["achtung", "gutentag"],
+    "created_at" : "2016-01-21",
+    "retweet_count" : 34
+  },
+  {
+    "id_str": "1234566890",
+    "lang" : "EN",
+    "text" : "Mmmh french baguette are the best",
+    "hashtags" : ["haha", "blabla"],
+    "created_at" : "2016-06-21",
+    "retweet_count" : 3
+  },
+  {
+    "id_str": "1234565890",
+    "lang" : "RU",
+    "text" : "baguette baguette noob l2p blyat",
+    "hashtags" : ["lol", "cykablyat"],
+    "created_at" : "2016-07-21",
+    "retweet_count" : 0
+  },
+  {
+    "id_str": "1234564890",
+    "lang" : "IT",
+    "text" : "Ma che bellissima la baguette de la boulangeria",
+    "hashtags" : ["blabla"],
+    "created_at" : "2016-07-25",
+    "retweet_count" : 120
+  },
+  {
+    "id_str": "1234563890",
+    "lang" : "IT",
+    "text" : "Me amo la baguette para noel a la matina",
+    "hashtags" : ["noel", "fiesta"],
+    "created_at" : "2016-12-25",
+    "retweet_count" : 0
+  }
+]
