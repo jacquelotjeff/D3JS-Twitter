@@ -37,7 +37,7 @@ $tweetsByCountries = getTweetsByCountries($manager);
     <script>
         var tweetsByCountry = <?php echo json_encode($tweetsByCountries) ?>
     </script>
-
+    <script src="js/utils/colors.js"></script>
     <script
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

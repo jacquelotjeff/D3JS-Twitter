@@ -1,24 +1,29 @@
 console.log(tweetsByCountry);
 
+labels = tweetsByCountry.map(function (item, index) {
+    return item._id;
+});
+
+counts = tweetsByCountry.map(function (item, index) {
+    return item.count;
+});
+
+// Récupération du bon nombre de clés couleurs.
+colorsKey = Object.keys(Colors.names);
+colorsKey = colorsKey.slice(0, tweetsByCountry.length);
+
+colors = [];
+colorsKey.forEach(function(colorKey){
+    colors.push(Colors.names[colorKey]);
+});
+
 var data = {
-    labels: [
-        "Red",
-        "Blue",
-        "Yellow"
-    ],
+    labels: labels,
     datasets: [
         {
-            data: [300, 50, 100],
-            backgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56"
-            ],
-            hoverBackgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56"
-            ]
+            data: counts,
+            backgroundColor: colors,
+            hoverBackgroundColor: colors
         }]
 };
 // And for a doughnut chart
