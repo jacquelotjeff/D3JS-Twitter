@@ -3,12 +3,12 @@
 use GuzzleHttp\Client;
 use GuzzleHttp\Subscriber\Oauth\Oauth1;
 
-$client = new Client(
-    ['base_url' => 'https://api.twitter.com',
-     'defaults' => ['auth' => 'oauth'],
-    ]);
-$json   = file_get_contents('twitter.conf.json');
+$client = new Client([
+    'base_url' => 'https://api.twitter.com',
+    'defaults' => ['auth' => 'oauth'],
+]);
 
+$json  = file_get_contents('twitter.conf.json');
 $stack = \GuzzleHttp\HandlerStack::create();
 
 $authData   = json_decode($json, true);
@@ -21,14 +21,38 @@ $client = new Client([
     'handler'  => $stack,
 ]);
 
-
 /*
  * Executing a GET request on the timeline service, pass the result to the json parser
  */
 
-$toSearch = urlencode('imagine Dragons');
+$toSearch  = urlencode('Paris');
 $maxTweets = 100;
 
-//$res = $client->get('search/tweets.json?count='.$maxTweets.'&q='.$toSearch, ['auth' => 'oauth']);
-//var_dump($res->getBody()->getContents()); die;
-//print_r($res); //we have the parsed response in an array!
+$res = $client->get('search/tweets.json?count='.$maxTweets.'&q='.$toSearch, ['auth' => 'oauth']);
+
+$bulk         = new \MongoDB\Driver\BulkWrite(['ordered' => true]);
+$writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
+
+$response = $res->getBody()->getContents();
+
+$results = json_decode($response, true);
+
+foreach ($results['statuses'] as $result) {
+    $tweet = [
+        'id'            => $result['id'],
+        'lang'          => $result['lang'],
+        'hashtags'      => $result['entities']['hashtags'],
+        'created_at'    => $result['created_at'],
+        'text'          => $result['text'],
+        'retweet_count' => $result['retweet_count']
+    ];
+
+    $bulk->insert($tweet);
+}
+
+try {
+    $result = $manager->executeBulkWrite('db.tweets', $bulk, $writeConcern);
+} catch (\Exception $e) {
+    var_dump($e);
+    die;
+}

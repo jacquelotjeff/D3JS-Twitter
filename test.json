@@ -4,7 +4,7 @@
     "lang" : "pt",
     "text" : "RT @Nanocrom19: @Tilah pensais pas que la baguette Ã©tait aussi clichÃ©",
     "hashtags" : [],
-    "created_at" : "2016-01-21",
+    "created_at" : {"$date": 1352540684243},
     "retweet_count" : 34
   },
   {
@@ -12,7 +12,7 @@
     "lang" : "en",
     "text" : "@DANNYonPC @MrProWestie And a baguette melee weapon ofc",
     "hashtags" : ["Lassalle"],
-    "created_at" : "2016-03-13",
+    "created_at" : {"$date": 1342540684243},
     "retweet_count" : 0
   },
   {
@@ -20,7 +20,7 @@
     "lang" : "de",
     "text" : "Jean #Lassalle - bonjour Mr Lassalle une baguette ? - mes chers compatriotes je vais #LeGrandDebat",
     "hashtags" : ["Lassalle", "LeGrandDebat"],
-    "created_at" : "2016-07-10",
+    "created_at" : {"$date": 1382540684243},
     "retweet_count" : 123
   },
   {
@@ -28,7 +28,7 @@
     "lang" : "fr",
     "text" : "RT @hou_ryan76: Just witnessed Wilson walk into the caf with a king can of iced tea and a baguette.",
     "hashtags" : ["baguette", "boulangerie"],
-    "created_at" : "2016-03-10",
+    "created_at" : {"$date": 1332540684243},
     "retweet_count" : 23
   },
   {
@@ -36,7 +36,7 @@
     "lang" : "de",
     "text" : "Ach er keur tzung archekel!!! BAGUETTE",
     "hashtags" : ["achtung", "gutentag"],
-    "created_at" : "2016-01-21",
+    "created_at" : {"$date": 1352510684243},
     "retweet_count" : 34
   },
   {
@@ -44,7 +44,7 @@
     "lang" : "en",
     "text" : "Mmmh french baguette are the best",
     "hashtags" : ["haha", "blabla"],
-    "created_at" : "2016-06-21",
+    "created_at" : {"$date": 1352540684243},
     "retweet_count" : 3
   },
   {
@@ -52,7 +52,7 @@
     "lang" : "ru",
     "text" : "baguette baguette noob l2p blyat",
     "hashtags" : ["lol", "cykablyat"],
-    "created_at" : "2016-07-21",
+    "created_at" : {"$date": 1355540684243},
     "retweet_count" : 0
   },
   {
@@ -60,7 +60,7 @@
     "lang" : "it",
     "text" : "Ma che bellissima la baguette de la boulangeria",
     "hashtags" : ["blabla"],
-    "created_at" : "2016-07-25",
+    "created_at" : {"$date": 1354540684243},
     "retweet_count" : 120
   },
   {
@@ -68,7 +68,7 @@
     "lang" : "it",
     "text" : "Me amo la baguette para noel a la matina",
     "hashtags" : ["noel", "fiesta"],
-    "created_at" : "2016-12-25",
+    "created_at" : {"$date": 1352540684243},
     "retweet_count" : 0
   }
 ]

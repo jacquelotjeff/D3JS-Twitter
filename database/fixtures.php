@@ -1,13 +1,13 @@
 <?php
 
+include('database/connection.php');
 
+$query   = new \MongoDB\Driver\Query([]);
+$results = $manager->executeQuery('db.tweets', $query);
 
-/*
-$bulk = new MongoDB\Driver\BulkWrite;
-$bulk->insert(['x' => 1]);
-$bulk->insert(['x' => 2]);
-$bulk->insert(['x' => 3]);
-$manager->executeBulkWrite('db.collection', $bulk);
-*/
+foreach ($results as $result) {
+    var_dump($result);
+}
 
+die('aaa');
 
