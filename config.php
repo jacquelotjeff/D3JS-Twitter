@@ -12,8 +12,4 @@ $params        = json_decode($contentParams, true);
 $nbTweets = $params['total_tweets'];
 $subject  = $params['subject'];
 
-require 'database/queries.php';
-
-require "oauth.php";
-
 ?>

@@ -1,3 +1,5 @@
+console.log(tweetsByCountry);
+
 var data = {
     labels: [
         "Red",
