@@ -6,12 +6,13 @@ $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 
 require "oauth.php";
 
+include('database/hashtags.php');
 include('database/tweets-by-country.php');
 include('database/tweets-on-time.php');
 
 $tweetsByCountries = getTweetsByCountries($manager);
 $tweetsOnTime = getTweetsOnTime($manager);
-
+$hashtags = getHashtags($manager);
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +40,7 @@ $tweetsOnTime = getTweetsOnTime($manager);
     <script>
         var tweetsByCountry = <?php echo json_encode($tweetsByCountries) ?>;
         var tweetsOnTime = <?php echo json_encode($tweetsOnTime) ?>;
+        var hashtags = <?php echo json_encode($hashtags); ?>;
     </script>
     <script src="js/utils/colors.js"></script>
     <script
