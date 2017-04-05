@@ -6,7 +6,10 @@ require 'config.php';
 $jsonTweets = file_get_contents('data.json');
 $tweets = json_decode($jsonTweets);
 
-//var_dump($tweets);
+echo "<pre>";
+var_dump($tweets);
+echo "</pre>";die;
+
 $langs = [];
 foreach($tweets->statuses as $tweet){
     //var_dump($tweet->metadata->iso_language_code);
@@ -43,7 +46,9 @@ var_dump(json_encode($dataLabelCountries));
     <h2>Hashtags les plus utilisés dans les tweet parlant de baguette</h2>
 
     <h2>Popularité de la baguette dans le temps</h2>
-
+    <div style="width: 700px; height: 700px; position: absolute;">
+        <canvas id="baguettesOnTime"></canvas>
+    </div>
 
     <script>
 
@@ -82,5 +87,6 @@ var_dump(json_encode($dataLabelCountries));
     }
         });
     </script>
+    <script src="/html/web/baguettes-on-time.js" charset="UTF-8"></script>
 </body>
 </html>
