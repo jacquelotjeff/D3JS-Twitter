@@ -31,4 +31,4 @@ $maxTweets = 100;
 
 //$res = $client->get('search/tweets.json?count='.$maxTweets.'&q='.$toSearch, ['auth' => 'oauth']);
 //var_dump($res->getBody()->getContents()); die;
-print_r($res); //we have the parsed response in an array!
+//print_r($res); //we have the parsed response in an array!
