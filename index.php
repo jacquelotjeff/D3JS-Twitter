@@ -15,8 +15,10 @@ foreach($tweets->statuses as $tweet){
 //var_dump($langs);
 $datas = array_count_values($langs);
 unset($datas["fr"]);
-var_dump($datas);
-
+//var_dump($datas);
+var_dump(array_keys($datas));
+$dataLabelCountries = json_encode(array_keys($datas));
+var_dump(json_encode($dataLabelCountries));
 ?>
 
 
