@@ -39,7 +39,7 @@ $hashtags = getHashtags($manager);
         var tweetsByCountry = <?php echo json_encode($tweetsByCountries); ?>;
         var hashtags = <?php echo json_encode($hashtags); ?>;
     </script>
-
+    <script src="js/utils/colors.js"></script>
     <script
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
