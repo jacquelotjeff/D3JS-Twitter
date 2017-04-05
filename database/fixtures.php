@@ -1,9 +1,13 @@
 <?php
 
-$jsonTweets = file_get_contents('data.json');
-$tweets = json_decode($jsonTweets);
 
-echo "<pre>";
-var_dump($tweets);
-echo "</pre>";
+
+/*
+$bulk = new MongoDB\Driver\BulkWrite;
+$bulk->insert(['x' => 1]);
+$bulk->insert(['x' => 2]);
+$bulk->insert(['x' => 3]);
+$manager->executeBulkWrite('db.collection', $bulk);
+*/
+
 

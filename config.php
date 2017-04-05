@@ -12,7 +12,6 @@ $subject  = $params['subject'];
 
 require 'vendor/autoload.php';
 require 'database/connection.php';
-require 'database/fixtures.php';
 
 include "oauth.php";
 
