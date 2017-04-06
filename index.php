@@ -8,7 +8,7 @@ require "oauth.php";
 
 include('database/hashtags.php');
 include('database/tweets-by-country.php');
-include('database/tweets-on-time.php');
+include('database/tweets-by-day.php');
 include('database/count-tweets.php');
 include('database/most-retweeted.php');
 include('database/most-recent-tweet.php');

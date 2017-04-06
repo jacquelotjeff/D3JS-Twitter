@@ -22,8 +22,17 @@
                     <span class="icon-bar"></span>
                 </button>
                 <?php
-                    $mostOld = $mostOldTweet->created_at->toDateTime()->format('d/m/Y H:i:s');
-                    $mostRecent = $mostRecentTweet->created_at->toDateTime()->format('d/m/Y H:i:s');
+                    if ($mostOldTweet != null) {
+                        $mostOld = $mostOldTweet->created_at->toDateTime()->format('d/m/Y H:i:s');
+                    } else {
+                        $mostOld = "inconnu";
+                    }
+
+                    if ($mostRecentTweet != null) {
+                        $mostRecent = $mostRecentTweet->created_at->toDateTime()->format('d/m/Y H:i:s');
+                    } else {
+                        $mostRecent = "inconnu";
+                    }
                     $period = "<small>(Du ".$mostOld." au ".$mostRecent.")</small>";
                 ?>
                 <a class="navbar-brand" href="index.html">D4JS with Twitter & Mongo DB <?php echo $period ?></a>
