@@ -1,7 +1,8 @@
 var ctx = document.getElementById("tweetsOnTime");
 
 labels = tweetsOnTime.map(function (item, index) {
-    return item._id.tweeted_at_month + "-" + item._id.tweeted_at_year;
+    console.log("Month : " + item._id.tweeted_at_month + " Day : " + item._id.tweeted_at_day);
+    return item._id.tweeted_at_month + "-" + item._id.tweeted_at_day;
 });
 
 counts = tweetsOnTime.map(function (item, index) {

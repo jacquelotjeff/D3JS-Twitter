@@ -8,11 +8,11 @@ function getTweetsOnTime($manager) {
         'pipeline' => [
             ['$project' => [
                 'tweeted_at_month' => ['$month'=>'$created_at'],
-                'tweeted_at_year' => ['$year'=>'$created_at']
+                'tweeted_at_day' => ['$dayOfMonth'=>'$created_at']
                 //'label' => ['$dateToString'=>['format'=>'%m-%Y', 'date'=>'$created_at']]
             ]],
             ['$group' => [
-                '_id' => ['tweeted_at_month'=>'$tweeted_at_month','tweeted_at_year'=>'$tweeted_at_year'],
+                '_id' => ['tweeted_at_month'=>'$tweeted_at_month','tweeted_at_day'=>'$tweeted_at_day'],
                 'count' => ['$sum' => 1]
             ]],
         ],
