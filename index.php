@@ -10,11 +10,13 @@ include('database/hashtags.php');
 include('database/tweets-by-country.php');
 include('database/tweets-on-time.php');
 include('database/most-retweeted.php');
+include('database/holidays.php');
 
 $tweetsByCountries = getTweetsByCountries($manager);
 $tweetsOnTime      = getTweetsOnTime($manager);
 $hashtags          = getHashtags($manager);
 $mostRetweeted     = getMostRetweeted($manager);
+$holidays          = getHolidays($manager);
 ?>
 
 <?php
@@ -41,6 +43,9 @@ $mostRetweeted     = getMostRetweeted($manager);
         <h2>Popularité de Paris dans le temps</h2>
         <div style="width: 700px; height: 700px; position: absolute;">
             <canvas id="tweetsOnTime"></canvas>
+        </div>
+        <div style="width: 700px; height: 700px; position: absolute;">
+            <canvas id="holidays"></canvas>
         </div>
 
 <?php
