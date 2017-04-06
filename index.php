@@ -11,12 +11,15 @@ include('database/tweets-by-country.php');
 include('database/tweets-on-time.php');
 include('database/count-tweets.php');
 include('database/most-retweeted.php');
+include('database/most-recent-tweet.php');
 
 $tweetsByCountries = getTweetsByCountries($manager);
 $tweetsOnTime      = getTweetsOnTime($manager);
 $hashtags          = getHashtags($manager);
-$countTweets          = getCountTweets($manager);
+$countTweets       = getCountTweets($manager);
 $mostRetweeted     = getMostRetweeted($manager);
+$mostRecentTweet   = getMostRecentTweet($manager);
+
 ?>
 
 <?php

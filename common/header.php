@@ -21,7 +21,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">D4JS with Twitter & Mongo DB</a>
+                <?php
+                    $mostOld = $mostOldTweet->created_at->toDateTime()->format('d/m/Y H:i:s');
+                    $mostRecent = $mostRecentTweet->created_at->toDateTime()->format('d/m/Y H:i:s');
+                    $period = "<small>(Du ".$mostOld." au ".$mostRecent.")</small>";
+                ?>
+                <a class="navbar-brand" href="index.html">D4JS with Twitter & Mongo DB <?php echo $period ?></a>
             </div>
 
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->

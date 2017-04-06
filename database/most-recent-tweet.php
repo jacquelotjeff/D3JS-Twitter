@@ -1,10 +1,10 @@
 <?php
 
-function getMostOldTweet ($manager) {
+function getMostRecentTweet ($manager) {
 
     $options = [
         'limit' => 1,
-        'sort' => ['id' => 1],
+        'sort' => ['id' => -1],
     ];
 
     $query = new MongoDB\Driver\Query([], $options);
@@ -16,5 +16,5 @@ function getMostOldTweet ($manager) {
 }
 
 /*
-db.tweets.find().sort( { id: 1 } ).limit( 1 )
+db.tweets.find().sort( { id: -1 } ).limit( 1 )
 */
