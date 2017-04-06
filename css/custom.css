@@ -1,0 +1,12 @@
+.navbar-inverse, .side-nav, .navbar-inverse .navbar-collapse {
+    background-color: #176084;
+    border-color: #176084;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FFF;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+    background-color: #114f6d;
+}
