@@ -1,11 +1,10 @@
-var ctx = document.getElementById("tweetsOnTime");
+var ctx = document.getElementById("tweetsByHour");
 
-labels = tweetsOnTime.map(function (item, index) {
-    console.log("Month : " + item._id.tweeted_at_month + " Day : " + item._id.tweeted_at_day);
-    return item._id.tweeted_at_month + "-" + item._id.tweeted_at_day;
+labels = tweetsByHour.map(function (item, index) {
+    return item._id.tweeted_at_day + "/" + item._id.tweeted_at_month + " " + item._id.tweeted_at_hour + "h";
 });
 
-counts = tweetsOnTime.map(function (item, index) {
+counts = tweetsByHour.map(function (item, index) {
     return item.count;
 });
 
@@ -13,7 +12,7 @@ var data = {
     labels: labels,
     datasets: [
         {
-            label: "Popularité de la baguette dans le temps",
+            label: "Popularité de "+ subject +" dans le temps (Par heure)",
             fill: false,
             lineTension: 0.1,
             backgroundColor: "rgba(75,192,192,0.4)",

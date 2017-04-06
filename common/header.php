@@ -21,14 +21,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">D4JS with Twitter & Mongo DB</a>
+                <?php
+                    if ($mostOldTweet != null) {
+                        $mostOld = $mostOldTweet->created_at->toDateTime()->format('d/m/Y H:i:s');
+                    } else {
+                        $mostOld = "inconnu";
+                    }
+
+                    if ($mostRecentTweet != null) {
+                        $mostRecent = $mostRecentTweet->created_at->toDateTime()->format('d/m/Y H:i:s');
+                    } else {
+                        $mostRecent = "inconnu";
+                    }
+                    $period = "<small>(Du ".$mostOld." au ".$mostRecent.")</small>";
+                ?>
+                <a class="navbar-brand" href="index.html">D4JS with Twitter & Mongo DB <?php echo $period ?></a>
             </div>
 
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="#"><i class="fa fa-fw fa-dashboard"></i> Paris</a>
+                        <a href="#">
+                            <i class="fa fa-fw fa-dashboard"></i>
+                            <?php echo $params['subject'].' ('.$countTweets.' tweets)' ?></a>
                     </li>
                 </ul>
             </div>
