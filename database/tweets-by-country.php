@@ -6,8 +6,9 @@ function getTweetsByCountries ($manager) {
         // build the 'aggregate' command
         'aggregate' => 'tweets', // specify the collection name
         'pipeline' => [
-            ['$match' => [ 'lang' => ['$ne'=>'fr']]],
+            //['$match' => [ 'lang' => ['$ne'=>'fr']]],
             ['$group' => ['_id' => '$lang', 'count' => ['$sum' => 1]]],
+            ['$sort' => ['count' => -1]]
         ],
     ]);
 
