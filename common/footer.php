@@ -4,6 +4,7 @@
     <script>
         var tweetsByCountry = <?php echo json_encode($tweetsByCountries) ?>;
         var tweetsOnTime = <?php echo json_encode($tweetsOnTime) ?>;
+        var tweetsByHour = <?php echo json_encode($tweetsByHour) ?>;
         var hashtags = <?php echo json_encode($hashtags); ?>;
         var mostRetweeted = <?php echo json_encode($mostRetweeted); ?>;
         var subject = "<?php echo $params['subject']; ?>";

@@ -39,19 +39,6 @@ $mostRecentTweet   = getMostRecentTweet($manager);
             <div class="clearfix"></div>
         </div>
 
-        <h2>Popularité de <?php echo $params['subject']; ?> dans le temps (Par jour)</h2>
-        <div style="width: 700px; height: 700px; position: absolute;">
-            <canvas id="tweetsOnTime" width="400" height="400"></canvas>
-            <div class="clearfix"></div>
-        </div>
-
-        <h2>Popularité de <?php echo $params['subject']; ?> dans le temps (Par heure)</h2>
-        <div style="width: 700px; height: 700px; position: absolute;">
-            <canvas id="tweetsByHour" width="400" height="400"></canvas>
-            <div class="clearfix"></div>
-        </div>
-
-
         <h2>Le plus retweeté</h2>
         <div style="margin-left: 100px;width:500px; height:500px">
             <canvas id="mostRetweeted" width="400" height="400"></canvas>
@@ -63,6 +50,18 @@ $mostRecentTweet   = getMostRecentTweet($manager);
                         $mostRetweeted[0]->retweet_count; ?></span> fois</p>
                 <p style="padding:10px;clear:both"><?php echo $mostRetweeted[0]->text; ?></p>
             </div>
+        </div>
+
+        <h2>Popularité de <?php echo $params['subject']; ?> dans le temps (Par jour)</h2>
+        <div style="width: 700px; height: 700px; position: absolute;">
+            <canvas id="tweetsOnTime" width="400" height="400"></canvas>
+            <div class="clearfix"></div>
+        </<div>
+
+        <h2>Popularité de <?php echo $params['subject']; ?> dans le temps (Par heure)</h2>
+        <div style="width: 700px; height: 700px; position: absolute;">
+            <canvas id="tweetsByHour" width="400" height="400"></canvas>
+            <div class="clearfix"></div>
         </div>
 
 <?php

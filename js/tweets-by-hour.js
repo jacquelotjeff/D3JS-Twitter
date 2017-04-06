@@ -1,10 +1,10 @@
 var ctx = document.getElementById("tweetsByHour");
 
-labels = tweetsOnTime.map(function (item, index) {
+labels = tweetsByHour.map(function (item, index) {
     return item._id.tweeted_at_day + "/" + item._id.tweeted_at_month + " " + item._id.tweeted_at_hour + "h";
 });
 
-counts = tweetsOnTime.map(function (item, index) {
+counts = tweetsByHour.map(function (item, index) {
     return item.count;
 });
 
