@@ -1,11 +1,11 @@
 <?php
 
-function getHashtags ($manager) {
-
+function getHashtags($manager)
+{
     $cmd = new MongoDB\Driver\Command([
         // build the 'aggregate' command
         'aggregate' => 'tweets', // specify the collection name
-        'pipeline' => [
+        'pipeline'  => [
             ['$unwind' => '$hashtags'],
             ['$group' => ['_id' => '$hashtags', 'count' => ['$sum' => 1]]],
             ['$match' => ['count' => ['$gte' => 10]]],
@@ -18,7 +18,6 @@ function getHashtags ($manager) {
     foreach ($cursor as $document) {
         $results = $document->result;
     }
-    var_dump($results);
-    return $results;
 
+    return $results;
 }

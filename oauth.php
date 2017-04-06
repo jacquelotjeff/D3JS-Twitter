@@ -34,14 +34,13 @@ $bulk         = new \MongoDB\Driver\BulkWrite(['ordered' => true]);
 $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
 
 $response = $res->getBody()->getContents();
-
-$results = json_decode($response, true);
+$results  = json_decode($response, true);
 
 foreach ($results['statuses'] as $result) {
 
-    $datetime = new DateTime($result['created_at']);
+    $datetime  = new DateTime($result['created_at']);
     $timestamp = $datetime->getTimestamp();
-    $bsonDate = new UTCDateTime($timestamp * 1000);
+    $bsonDate  = new UTCDateTime($timestamp * 1000);
 
     $tweet = [
         'id'            => $result['id'],
@@ -49,7 +48,7 @@ foreach ($results['statuses'] as $result) {
         'hashtags'      => $result['entities']['hashtags'],
         'created_at'    => $bsonDate,
         'text'          => $result['text'],
-        'retweet_count' => $result['retweet_count']
+        'retweet_count' => $result['retweet_count'],
     ];
 
     $bulk->insert($tweet);
