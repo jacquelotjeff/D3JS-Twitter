@@ -5,6 +5,7 @@
         var tweetsByCountry = <?php echo json_encode($tweetsByCountries) ?>;
         var tweetsOnTime = <?php echo json_encode($tweetsOnTime) ?>;
         var hashtags = <?php echo json_encode($hashtags); ?>;
+        var mostRetweeted = <?php echo json_encode($mostRetweeted); ?>;
     </script>
     <script src="js/utils/colors.js"></script>
     <script

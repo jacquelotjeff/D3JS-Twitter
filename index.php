@@ -9,10 +9,12 @@ require "oauth.php";
 include('database/hashtags.php');
 include('database/tweets-by-country.php');
 include('database/tweets-on-time.php');
+include('database/most-retweeted.php');
 
 $tweetsByCountries = getTweetsByCountries($manager);
 $tweetsOnTime      = getTweetsOnTime($manager);
 $hashtags          = getHashtags($manager);
+$mostRetweeted     = getMostRetweeted($manager);
 ?>
 
 <?php
@@ -23,14 +25,19 @@ $hashtags          = getHashtags($manager);
         <div style="margin-left: 100px;width:500px; height:500px">
             <canvas id="tagCloud" width="400" height="400"></canvas>
         </div>
-        <h2>Les pays parlant le plus de baguette</h2>
+        <h2>Les pays parlant le plus de Paris</h2>
         <div style="margin-left: 100px;width:500px; height:500px">
             <canvas id="byCountry" width="40" height="40"></canvas>
         </div>
         <h2>Le plus retweeté</h2>
-        <div style="margin-left: 100px;width:500px; height:500px">
-            <canvas id="mostRetweeted" width="40" height="40"></canvas>
-        </div>
+            <div style="box-shadow:0px 1px 5px -1px #000; height:auto; width:500px; margin:100px;">
+                <?php $date = $mostRetweeted[0]->created_at; ?>
+                <p style="padding:10px;float:left"><?php echo date("d/m/Y", intval($date->toDateTime()->format('Uu')) /
+                        1000000); ?></p>
+                <p style="padding:10px;float:right">Retweeté <span style="font-size:16px;"><?php echo
+                        $mostRetweeted[0]->retweet_count; ?></span> fois</p>
+                <p style="padding:10px;clear:both"><?php echo $mostRetweeted[0]->text; ?></p>
+            </div>
         <h2>Popularité de Paris dans le temps</h2>
         <div style="width: 700px; height: 700px; position: absolute;">
             <canvas id="tweetsOnTime"></canvas>
