@@ -18,6 +18,7 @@ function getHashtags ($manager) {
     foreach ($cursor as $document) {
         $results = $document->result;
     }
+    var_dump($results);
     return $results;
 
 }
