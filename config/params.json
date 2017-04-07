@@ -1,4 +1,5 @@
 {
   "total_tweets": "100",
-  "subject": "Imagine Dragons"
+  "subject": "Imagine Dragons",
+  "search_new_tweets" : false
 }

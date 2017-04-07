@@ -63,6 +63,7 @@ $mostRecentTweet   = getMostRecentTweet($manager);
             <canvas id="tweetsByHour" width="400" height="400"></canvas>
             <div class="clearfix"></div>
         </div>
+        <div class="clearfix"></div>
 
 <?php
 include 'common/footer.php';
