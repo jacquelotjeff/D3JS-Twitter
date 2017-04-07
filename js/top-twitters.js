@@ -1,21 +1,27 @@
 var data = {
     labels: [
-        "Red",
-        "Blue",
-        "Yellow"
+        "@OnlyVocal",
+        "@Birthpath9",
+        "@RadDragons",
+        "@larryareathome",
+        "@thesoundpIug"
     ],
     datasets: [
         {
-            data: [300, 50, 100],
+            data: [36, 25, 18, 14, 14],
             backgroundColor: [
                 "#FF6384",
                 "#36A2EB",
-                "#FFCE56"
+                "#FFCE56",
+                "#FF3300",
+                "#0023B1"
             ],
             hoverBackgroundColor: [
                 "#FF6384",
                 "#36A2EB",
-                "#FFCE56"
+                "#FFCE56",
+                "#FF3300",
+                "#0023B1"
             ]
         }]
 };

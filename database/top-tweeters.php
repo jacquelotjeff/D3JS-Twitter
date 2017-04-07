@@ -20,8 +20,6 @@ function getTopTweeters ($manager)
         $results = $document->result;
     }
 
-    var_dump($result);die;
-
     return $results;
 }
 
