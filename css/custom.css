@@ -1,3 +1,8 @@
+body {
+    background-color: #FFF;
+}
+
+
 .navbar-inverse, .side-nav, .navbar-inverse .navbar-collapse {
     background-color: #176084;
     border-color: #176084;
@@ -9,4 +14,16 @@
 
 .navbar-inverse .navbar-nav>.active>a {
     background-color: #114f6d;
+}
+
+h1 {
+    color: #0e6ba0;
+}
+
+h2 {
+    color: #72767b;
+}
+
+small {
+    font-size: 11px;
 }
