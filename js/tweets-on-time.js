@@ -13,7 +13,7 @@ var data = {
     labels: labels,
     datasets: [
         {
-            label: "Popularité de la baguette dans le temps",
+            label: "Popularité de " + subject + " dans le temps (Par jour)",
             fill: false,
             lineTension: 0.1,
             backgroundColor: "rgba(75,192,192,0.4)",
