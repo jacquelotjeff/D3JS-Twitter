@@ -20,7 +20,3 @@ function getMostRetweeted ($manager)
 
     return $results;
 }
-
-
-
-//db.tweets.find().sort({"retweet_count" : -1}).limit(2)

@@ -8,11 +8,8 @@
     <link href="../css/custom.css" rel="stylesheet">
 </head>
 <body>
-
     <div id="wrapper">
-        <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -41,33 +38,29 @@
                     $period ?></a>
             </div>
 
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
+                    <li>
                         <a href="../views/hashtags-cloud.php">Nuage des hashtags associés</a>
                     </li>
-                    <li class="">
+                    <li>
                         <a href="../views/most-retweeted.php">Le plus retweeté</a>
                     </li>
-                    <li class="">
+                    <li>
                         <a href="../views/tweets-by-country.php">Tweets par pays</a>
                     </li>
-                    <li class="">
+                    <li>
                         <a href="../views/tweets-by-day.php">Tweets par jour</a>
                     </li>
-                    <li class="">
+                    <li>
                         <a href="../views/tweets-by-hour.php">Tweets par heure</a>
                     </li>
-                    <li class="">
+                    <li>
                         <a href="../views/top-tweeters.php">Les plus passionés</a>
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </nav>
-
         <div id="page-wrapper">
-
             <div class="container-fluid">
 
