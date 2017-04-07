@@ -3,14 +3,13 @@
 <head>
     <title></title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/sb-admin.css" rel="stylesheet">
+    <link href="../css/custom.css" rel="stylesheet">
 </head>
 <body>
 
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,16 +34,22 @@
                     }
                     $period = "<small>(Du ".$mostOld." au ".$mostRecent.")</small>";
                 ?>
-                <a class="navbar-brand" href="index.html">D4JS with Twitter & Mongo DB <?php echo $period ?></a>
+                <?php
+                    $subjectCounts =  $params['subject'].' ('.$countTweets.' tweets)';
+                ?>
+                <a class="navbar-brand" href="index.html">D4JS with Twitter & Mongo DB - <?php echo $subjectCounts .
+                    $period ?></a>
             </div>
 
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="#">
-                            <i class="fa fa-fw fa-dashboard"></i>
-                            <?php echo $params['subject'].' ('.$countTweets.' tweets)' ?></a>
+                        <a href="../views/hashtags-cloud.php">Nuage des hashtags associés</a>
+                        <a href="../views/most-retweeted.php">Le plus retweeté</a>
+                        <a href="../views/tweets-by-country.php">Tweets par pays</a>
+                        <a href="../views/tweets-by-day.php">Tweets par jour</a>
+                        <a href="../views/tweets-by-hour.php">Tweets par heure</a>
                     </li>
                 </ul>
             </div>
