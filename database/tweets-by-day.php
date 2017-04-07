@@ -6,9 +6,6 @@ function getTweetsOnTime($manager) {
         // build the 'aggregate' command
         'aggregate' => 'tweets', // specify the collection name
         'pipeline' => [
-            ['$sort' => [
-                'created_at' => -1,
-            ]],
             ['$project' => [
                 'tweeted_at_month' => ['$month'=>'$created_at'],
                 'tweeted_at_day' => ['$dayOfMonth'=>'$created_at'],
@@ -16,7 +13,7 @@ function getTweetsOnTime($manager) {
             ['$group' => [
                 '_id' => ['tweeted_at_month'=>'$tweeted_at_month','tweeted_at_day'=>'$tweeted_at_day'],
                 'count' => ['$sum' => 1]
-            ]],
+            ]]
         ],
     ]);
 
