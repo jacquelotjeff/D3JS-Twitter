@@ -34,7 +34,7 @@
                 <?php
                     $subjectCounts =  $params['subject'].' ('.$countTweets.' tweets)';
                 ?>
-                <a class="navbar-brand" href="#">D4JS with Twitter & Mongo DB - <?php echo $subjectCounts .
+                <a class="navbar-brand" href="#">ChartJS with Twitter & Mongo DB - <?php echo $subjectCounts .
                     $period ?></a>
             </div>
 
