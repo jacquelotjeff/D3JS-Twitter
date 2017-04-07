@@ -5,10 +5,9 @@ include('../database/most-retweeted.php');
 $mostRetweeted     = getMostRetweeted($manager);
 ?>
 
-<h2>Le plus retweeté</h2>
-<div style="margin-left: 100px;width:500px; height:500px">
-    <canvas id="mostRetweeted" width="400" height="400"></canvas>
-    <div style="box-shadow:0px 1px 5px -1px #000; height:auto; width:500px; margin:100px;">
+<h2 style="margin-bottom: 30px;">Le plus retweeté</h2>
+<div style="width:500px;">
+    <div style="box-shadow:0px 1px 5px -1px #000; height:auto; width:400px;">
         <?php $date = $mostRetweeted[0]->created_at; ?>
         <p style="padding:10px;float:left"><?php echo date("d/m/Y", intval($date->toDateTime()->format('Uu')) /
                 1000000); ?></p>

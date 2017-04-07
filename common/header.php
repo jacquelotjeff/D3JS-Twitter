@@ -32,12 +32,12 @@
                     } else {
                         $mostRecent = "inconnu";
                     }
-                    $period = "<small>(Du ".$mostOld." au ".$mostRecent.")</small>";
+                    $period = " <small>(Du ".$mostOld." au ".$mostRecent.")</small>";
                 ?>
                 <?php
                     $subjectCounts =  $params['subject'].' ('.$countTweets.' tweets)';
                 ?>
-                <a class="navbar-brand" href="index.html">D4JS with Twitter & Mongo DB - <?php echo $subjectCounts .
+                <a class="navbar-brand" href="#">D4JS with Twitter & Mongo DB - <?php echo $subjectCounts .
                     $period ?></a>
             </div>
 
