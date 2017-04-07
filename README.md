@@ -1,6 +1,6 @@
 # Prerequisites
 
-You need to have a server with PHP, MongoDB (if you have Docker on your environment, you can download use this 
+You need to have a server with PHP, MongoDB (if you have Docker on your environment, you can use this 
 repository:  https://github.com/jacquelotjeff/Docker-MongoDB-Apache2).
 
 # Installation
