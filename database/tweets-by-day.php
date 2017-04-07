@@ -22,12 +22,9 @@ function getTweetsOnTime($manager) {
 
     $cursor = $manager->executeCommand('db', $cmd); // retrieve the results
 
-    echo "<pre>";
     foreach ($cursor as $document) {
-        var_dump($document);
         $results = $document->result;
     }
-    echo "</pre>";
 
     return $results;
 
